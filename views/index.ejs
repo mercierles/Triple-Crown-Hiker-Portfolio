@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html id="htmlLoaded">
+    <%- include('includes/head.ejs') %>
+    <input id="trailID" type="hidden" value="<%- trailData.trailShortName.toLowerCase()  %>">
+    <textarea id="jsonData" type="hidden" style="display: none;"><%- JSON.stringify(trailData) %></textarea>
+    <body class="<%- trailData.trailShortName.toLowerCase()  %>"> <!-- onload="setBackground('<%- trailData.trailShortName.toLowerCase()  %>');"> -->
+        <!-- <link rel="preload" href="../public/images/lowRes/<%- trailData.trailShortName.toLowerCase()  %>/background_1.jpg" as="image">
+        <link rel="preload" href="../public/images/medRes/<%- trailData.trailShortName.toLowerCase()  %>/background_1.jpg" as="image">
+        <link rel="preload" href="../public/images/hiRes/<%- trailData.trailShortName.toLowerCase()  %>/background_1.jpg" as="image"> -->
+        <%- include('includes/navigation.ejs') %>
+        <!-- <div id="spotlightImage" style="display: flex;position: fixed;z-index: -1000;height: 100%;width: auto;overflow-x: hidden;" src="../public/images/lowRes/<%- trailData.trailShortName.toLowerCase()  %>/background_1.jpg"></div> -->
+        <div id="spotlightImage" class="spotlightImage" > <!-- style="background-image:url('../public/images/lowRes/<%- trailData.trailShortName.toLowerCase()  %>/background_1.jpg')" > --> </div>
+        <main class="container-fluid p-0">
+            <% if(trailData.trailShortName === 'PCT') { %>
+                <%- include('includes/trail/pct/pctSpotlight.ejs') %>
+            <% }else if(trailData.trailShortName === 'CDT'){%>
+                <%- include('includes/trail/cdt/cdtSpotlight.ejs') %>
+            <% }else if(trailData.trailShortName === 'AT'){%>
+                <%- include('includes/trail/at/atSpotlight.ejs') %>
+            <% }%>
+            <section id="about" class="row section section-about">
+                <!-- Section Lazy Loaded by observer -->
+            </section>
+            <section id="trailInfo" class="row section section-trail">
+                <!-- Section Lazy Loaded by observer -->
+            </section>
+            <section id="instagram" class="row section section-instagram">
+                <!-- Section Lazy Loaded by observer -->
+            </section>
+            <section id="blog" class="row section section-blog">
+                <!-- Section Lazy Loaded by observer -->
+            </section>
+            <section id="fitbit" class="row section section-stats">
+                <!-- Section Lazy Loaded by observer -->
+            </section>
+            <section id="lighterPack" class="row section section-stats">
+                <!-- Section Lazy Loaded by observer -->
+            </section>
+            <section id="map" class="row section section-mapshare">
+                <!-- Section Lazy Loaded by observer -->
+            </section>
+            <footer>
+                <div id="copyright" class="p-4" style="background-color: rgba(0, 0, 0, 0.05);"></div>
+                <script>
+                    // Set copyright
+                    jQuery("#copyright")[0].innerHTML = "<i class='fa fa-copyright'></i> " + new Date().getFullYear() + " Copyright: Leslie Mercier";
+                </script>
+            </footer>
+        </main>
+    </body>
+    <%- include('includes/end.ejs') %>
+    <script>
+        $(window).on('load',function(){
+            var jsonTrailData = jQuery("#jsonData")[0].innerText;
+            jQuery("#jsonData").remove();
+            sessionStorage.setItem("trailData", jsonTrailData);
+        });
+    </script>
+</html>

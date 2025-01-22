@@ -1,0 +1,40 @@
+{"pct" : {
+        "trailName": "Pacific Crest Trail",
+        "trailShortName": "PCT",
+        "trailDescription": "The Pacific Crest Trail (PCT) is a renowned long-distance hiking trail stretching over 2,650 miles from the border of Mexico to Canada, traversing through California, Oregon, and Washington. This iconic trail offers hikers an unparalleled journey through diverse landscapes, from arid deserts to lush forests and rugged mountains. Whether you're seeking adventure, solitude, or a deeper connection with nature, the PCT provides an unforgettable experience, challenging both body and spirit along the way.",
+        "trailTotalMiles": "2650",
+        "trailStartDate": "2022-04-26",
+        "trailEndDate": "2022-10-05",
+        "trailLastPostDate": "2022-12-31",
+        "trailInfoImage":"https://www.pcta.org/wp-content/themes/pcta/homepage-june14/images/pct-pcta-logos.png",
+        "trailMapshare": "",
+        "trailLighterPack":{"Full Pack Weight":"https://lighterpack.com/r/c0z1be","Warm Pack Weight":"https://lighterpack.com/r/gypdcw","Cold Pack Weight":"https://lighterpack.com/r/xrbf9u"},
+        "showBlog":false
+    },
+"at" : {
+    "trailName": "Appalachian Trail",
+    "trailShortName": "AT",
+    "trailDescription": "The Appalachian Trail is a 2,190-mile-long hiking route spanning from Georgia to Maine, offering breathtaking scenery and a profound connection to nature. Established in 1937, it's a legendary challenge attracting adventurers from around the world. Whether you're tackling a section or thru-hiking, the trail promises unforgettable experiences amidst diverse landscapes and rich cultural heritage. Discover rustic shelters, scenic vistas, and the camaraderie of fellow hikers on this iconic journey through the eastern United States.",
+    "trailTotalMiles": "2260",
+    "trailStartDate": "2018-04-02",
+    "trailEndDate": "2018-10-05",
+    "trailLastPostDate": "2018-12-31",
+    "trailInfoImage":"https://appalachiantrail.org/wp-content/themes/wildeast/images/logo-color.svg",
+    "trailMapshare": "",
+    "trailLighterPack":{"Full Pack Weight":"https://lighterpack.com/r/c0z1be"},
+    "showBlog":false
+},
+"cdt" : {
+    "trailName": "Continental Divide Trail",
+    "trailShortName": "CDT",
+    "trailDescription": "The Continental Divide Trail (CDT) is a legendary long-distance hiking route stretching approximately 3,100 miles from the border of Mexico to Canada, traversing through the Rocky Mountains across five states: New Mexico, Colorado, Wyoming, Idaho, and Montana. As one of the Triple Crown trails, the CDT offers intrepid hikers a chance to immerse themselves in some of the most remote and rugged wilderness in the United States. From sweeping vistas to challenging terrain, the CDT promises a once-in-a-lifetime adventure filled with breathtaking scenery and unparalleled solitude.",
+    "trailTotalMiles": "3200",
+    "trailStartDate": "2024-04-07",
+    "trailLastPostDate": "2024-12-31",
+    "trailEndDate": "2024-12-31",
+    "trailInfoImage":"https://cdtcoalition.org/wp-content/uploads/CDTC_logo-1.png",
+    "trailMapshare": "",
+    "trailLighterPack":{"Full Pack Weight":"https://lighterpack.com/r/r1ci9c","Warm Pack Weight":"https://lighterpack.com/r/fno8w6","Cold Pack Weight":"https://lighterpack.com/r/slic24"},
+    "showBlog":false
+}
+}
