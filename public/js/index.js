@@ -11,7 +11,8 @@
 //         jQuery("#spotlightImage").css("background-image","url(../public/images/lowRes/"+trailShortName+"/background_1.jpg)");
 //     }
 // });
-
+import {instaInit} from './instagram.js';
+import {createArcGISMap} from './trailMapHelper.js';
 // Setup IntersectionObserver for Lazy Loading
 const sections = document.querySelectorAll(".section");
 const observer = new IntersectionObserver(entries => {
@@ -48,8 +49,9 @@ const observer = new IntersectionObserver(entries => {
                     // TODO Update about
                     //jQuery(".section-trail__paragraph")[0].innerText = jsonData.trailDescription;
                 }else if(entry.target.id === "map"){
-                    // Todo update Map
+                    // Todo Setup ArcGIS Map
                     //jQuery(".section-trail__paragraph")[0].innerText = jsonData.trailDescription;
+                    createArcGISMap();
                 }
 
                 entry.target.classList.toggle("section__show", entry.isIntersecting);

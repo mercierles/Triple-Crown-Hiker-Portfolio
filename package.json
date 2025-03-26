@@ -1,7 +1,7 @@
 {
-  "name": "2024cdt_website",
+  "name": "package1",
   "version": "1.0.0",
-  "description": "CDT Website",
+  "description": "Website Packages and launch scripts",
   "main": "app.js",
   "scripts": {
     "test": "echo \"HELLO World!\"",

@@ -78,7 +78,7 @@ export function getFitBitData(req, res, next) {
 };
 
 export function getInstagramData(req, res, next) {
-    getArcGISData();
+    // getArcGISData(req, res, next);
     var startTimestamp = Math.floor(new Date(req.query.startDate).getTime() / 1000);
     var endTimestamp = Math.floor(new Date(req.query.endDate).getTime() / 1000);
     let token = process.env.INSTAGRAM_ACCESS_TOKEN;
@@ -133,16 +133,16 @@ export function getBlogData(req, res, next) {
 
 export function getArcGISData(req,res,next) {
     console.log('running axios for arc gis data');
-    var d;
     axios.get("https://www.arcgis.com/sharing/rest/content/items/6762840fe8b540e6811caf64d76474be/data",{params: {
         f: 'json',
         token: process.env.ARCGIS_TOKEN,
     },}).then(function(jsonData){
-        console.log('data retrieved');
-        console.log(jsonData.data);
-        d = jsonData.data;
+        if(jsonData.data.error !== undefined){console.log('throwing error ' + jsonData.data.error.message + ' | ' + JSON.stringify(jsonData.data));throw new Error(jsonData.data.error.message)}
+        console.log('sending gis data: ');
         res.send(JSON.stringify(jsonData.data));
     }).catch(function (error) {
+        console.log('error thrown');
+        console.log(error);
         res.statusMessage = 'Unable to retrieve arcgis data - ' + error;
         res.status(400).end();
     });

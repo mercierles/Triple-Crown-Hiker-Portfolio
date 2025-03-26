@@ -1,10 +1,7 @@
-// import WebMap from "https://js.arcgis.com/4.27/@arcgis/core/WebMap.js";
-// import MapView from "https://js.arcgis.com/4.27/@arcgis/core/views/MapView.js";
-
 var currentMileMarker = Math.abs((new Date("2022-04-26") - new Date))/day * 15;
 var instagramCaptions = [];
 // Initialize
-function instaInit(callback){
+export function instaInit(callback){
 	let x = JSON.parse(sessionStorage.getItem("trailData"));
 	let igData = sessionHelper.getItem("instagramData_"+x.trailShortName);
 	if(!igData){
@@ -33,10 +30,6 @@ function getInstagramData(callback){
 		success: function(response){
 			// Populate 
 			let jsonResponse = JSON.parse(response);
-			// let token = jsonResponse['arcGISToken'];
-			// var esriConfig = {
-			// 	apiKey: token
-			// };
 			if(jsonResponse){
 				sessionHelper.setItem("instagramData_"+x.trailShortName,jsonResponse)
 				popuplateInstragramData(jsonResponse,callback);
@@ -73,61 +66,3 @@ function popuplateInstragramData(igData,callback){
 	}
 }
 
-function createArcGISMap(){
-	/************************************************************
- * Creates a new WebMap instance. A WebMap must reference
- * a PortalItem ID that represents a WebMap saved to
- * arcgis.com or an on-premise portal.
- ************************************************************/
-
-// const webmap = new WebMap({
-// 	portalItem: {
-// 	  id: "e691172598f04ea8881cd2a4adaa45ba"
-// 	}
-//   });
-  
-  $.ajax({
-	type: "GET",
-	url: "/arcGIS",
-	success: function(jsonResponse){
-		// Populate 
-		// let jsonResponse = JSON.parse(response);
-		if(jsonResponse){
-			const WebMap = require('https://js.arcgis.com/4.27/@arcgis/core/WebMap.js');
-			const MapView = require('https://js.arcgis.com/4.27/@arcgis/core/views/MapView.js');
-            const webmapJson = jsonResponse;
-
-            // Create and display the WebMap using ArcGIS API for JavaScript
-            const webMap = new WebMap({
-                portalItem: {
-                    id: webmapId // Use the WebMap ID to reference the map
-                }
-            });
-
-            const view = new MapView({
-                container: "arcgisContainer", // HTML element where the map will be displayed
-                map: webMap
-            });
-
-			console.log(jsonResponse);
-		}else{
-			jQuery("#instagram-carousel").hide();
-			console.log("Unable to retrieve Data");
-		}
-	},
-	error: function(response){
-		console.log("Unable to retrieve  Data");
-	}
-  });
-  /************************************************************
-   * Set the WebMap instance to the map property in a MapView.
-   ************************************************************/
-//   const view = new MapView({
-// 	map: webmap,
-// 	container: "arcgisContainer"
-//   });
-}
-
-function consoleLog(){
-	console.log("jquery from instagram.js");
-}
