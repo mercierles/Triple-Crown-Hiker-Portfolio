@@ -51,7 +51,7 @@ const observer = new IntersectionObserver(entries => {
                 }else if(entry.target.id === "map"){
                     // Todo Setup ArcGIS Map
                     //jQuery(".section-trail__paragraph")[0].innerText = jsonData.trailDescription;
-                    createArcGISMap();
+                    createArcGISMap(jsonData.lat,jsonData.long);
                 }
 
                 entry.target.classList.toggle("section__show", entry.isIntersecting);

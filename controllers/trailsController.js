@@ -78,22 +78,26 @@ export function getFitBitData(req, res, next) {
 };
 
 export function getInstagramData(req, res, next) {
-    // getArcGISData(req, res, next);
     var startTimestamp = Math.floor(new Date(req.query.startDate).getTime() / 1000);
     var endTimestamp = Math.floor(new Date(req.query.endDate).getTime() / 1000);
     let token = process.env.INSTAGRAM_ACCESS_TOKEN;
     let instagramGraphBaseURL = "https://graph.instagram.com/v21.0";
-    let mediaPostArray = {"arcGISJSON":'',"image":[]};
-    console.log(process.env.ARCGIS_TOKEN);
-    axios.get(instagramGraphBaseURL+"/8900579616684635/media?fields=id,caption,children{media_url}&access_token="+token,{}).then(function(jsonData){
+    let mediaPostArray = {'image':[]};
+    
+    axios.get(instagramGraphBaseURL+"/9975905459108511/media?fields=id,caption,media_url,children{media_url}&since="+startTimestamp+"&until="+endTimestamp+"&access_token="+token,{}).then(function(jsonData){
         let data = [];
         data = jsonData.data.data;
         data.forEach(element => {
-            element.children.data.forEach(child =>{
-                mediaPostArray['image'].push({'id':child['id'], 'caption':element['caption'].split("/n")[0], 'url':child['media_url']});
-            });
+            if(!element.children){
+                mediaPostArray['image'].push({'id':element['id'], 'caption':element['caption'].split("/n")[0], 'url':element['media_url']});
+            }else{
+                element.children?.data.forEach(child =>{
+                    mediaPostArray['image'].push({'id':child['id'], 'caption':element['caption'].split("/n")[0], 'url':child['media_url']});
+                });
+            }
         });
         res.send(JSON.stringify(mediaPostArray));
+    
 
     }).catch(function (error) {
             res.statusMessage = 'Unable to retrieve instagram data - ' + error;
@@ -133,7 +137,7 @@ export function getBlogData(req, res, next) {
 
 export function getArcGISData(req,res,next) {
     console.log('running axios for arc gis data');
-    axios.get("https://www.arcgis.com/sharing/rest/content/items/6762840fe8b540e6811caf64d76474be/data",{params: {
+    axios.get("https://www.arcgis.com/sharing/rest/content/items/39728eb580ea4d2e84c01a82b6247a50/data",{params: {
         f: 'json',
         token: process.env.ARCGIS_TOKEN,
     },}).then(function(jsonData){

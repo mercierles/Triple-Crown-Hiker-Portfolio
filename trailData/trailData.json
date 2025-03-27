@@ -9,7 +9,9 @@
         "trailInfoImage":"https://www.pcta.org/wp-content/themes/pcta/homepage-june14/images/pct-pcta-logos.png",
         "trailMapshare": "",
         "trailLighterPack":{"Full Pack Weight":"https://lighterpack.com/r/c0z1be","Warm Pack Weight":"https://lighterpack.com/r/gypdcw","Cold Pack Weight":"https://lighterpack.com/r/xrbf9u"},
-        "showBlog":false
+        "showBlog":false,
+        "long": -116.692924,
+        "lat": 33.922826
     },
 "at" : {
     "trailName": "Appalachian Trail",
@@ -22,7 +24,9 @@
     "trailInfoImage":"https://appalachiantrail.org/wp-content/themes/wildeast/images/logo-color.svg",
     "trailMapshare": "",
     "trailLighterPack":{"Full Pack Weight":"https://lighterpack.com/r/c0z1be"},
-    "showBlog":false
+    "showBlog":false,
+    "long": -83.986057,
+    "lat": 34.705960
 },
 "cdt" : {
     "trailName": "Continental Divide Trail",
@@ -35,6 +39,8 @@
     "trailInfoImage":"https://cdtcoalition.org/wp-content/uploads/CDTC_logo-1.png",
     "trailMapshare": "",
     "trailLighterPack":{"Full Pack Weight":"https://lighterpack.com/r/r1ci9c","Warm Pack Weight":"https://lighterpack.com/r/fno8w6","Cold Pack Weight":"https://lighterpack.com/r/slic24"},
-    "showBlog":false
+    "showBlog":false,
+    "long": -108.714315,
+    "lat": 33.922826
 }
 }
