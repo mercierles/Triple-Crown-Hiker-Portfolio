@@ -1,19 +1,19 @@
 // Calculate Time
-const minute = 1000 * 60;
-const hour = minute * 60;
-const day = hour * 24;
-const year = day * 365;
-const sessionExpireTime = day;
+export const MINUTE = 1000 * 60;
+export const HOUR = MINUTE * 60;
+export const DAY = HOUR * 24;
+export const YEAR = DAY * 365;
+export const SESSIONEXPIRETIME = YEAR;
 
 // Create Namespace for these Global variable
-var sessionHelper = {};
+export var sessionHelper = {};
 sessionHelper.getItem = function(storageKey){
     let storageValue = localStorage.getItem(storageKey);
 	if(storageValue){
         let temp = JSON.parse(storageValue);
         let oldDate = Math.round(new Date(temp.key).getTime());
         let newDate = Math.round(new Date().getTime());  
-        if ((newDate-oldDate) < sessionExpireTime) {
+        if ((newDate-oldDate) < SESSIONEXPIRETIME) {
             return temp.value;
         }
     }
@@ -48,4 +48,16 @@ sessionHelper.addReadMore = function(id, section){
 			jQuery("#"+id+" .section__show-more-button")[0].innerText = "Read Less...";
 		}
 	}
+}
+
+sessionHelper.GetInternetQuality = function(){
+	// let internetQuality = this.getItem("INTERNET");
+	let internetQuality = 0;
+	if(!internetQuality){
+		if(navigator && navigator.connection){
+			internetQuality = navigator.connection.downlink;
+		}
+	}
+	// this.setItem("INTERNET",internetQuality.toString());
+	return internetQuality;
 }

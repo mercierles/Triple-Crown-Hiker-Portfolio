@@ -1,43 +1,22 @@
+
 <div class="row section-title">
     <h1 class="col-12">The Who</h1>
 </div>
 <div class="row mb-5">
     <div class="col-12 offset-md-2 col-md-auto p-0 ">
-        <script>
-        var internetQuality = sessionStorage.getItem('INTERNET');
-        console.log(internetQuality + ' on about page');
-        (internetQuality !== '') ? internetQuality = parseInt(internetQuality) : internetQuality = 0;
-        // if(navigator && navigator.connection){internetQuality = navigator.connection.downlink;}
-        $(document).ready(function(){
-            if(internetQuality > 4){
-                console.log('IQ: ' + internetQuality + ' loading HiRES -- about section');
-                // jQuery("#spotlightImage").css("background-image","url(../public/images/hiRes/"+trailShortName+"/background_1.jpg)");
-            }else if(internetQuality > 2){
-                console.log('IQ: ' + internetQuality + ' loading MedRES -- about section');
-                // jQuery("#spotlightImage").css("background-image","url(../public/images/medRes/"+trailShortName+"/background_1.jpg)");
-            }else{
-                console.log('IQ: ' + internetQuality + ' loading LowRES -- about section');
-                // jQuery("#spotlightImage").css("background-image","url(../public/images/lowRes/"+trailShortName+"/background_1.jpg)");
-            }
-        });
-        </script>
-        <img class="section-about-profile__img" src="../../public/images/lowRes/profile.jpg">
+        <img id="profile_img" class="section-about-profile__img" src="../../public/images/lowRes/profile.jpg">
     </div>
     <p class="col-12 col-md-4">
-        <a class="" href="/trail/AT">Appalachian Trail</a> - 2018
-        </br><a class="" href="/trail/PCT">Pacific Crest Trail</a> - 2022
-        </br> <a class="" href="/trail/CDT">Continental Divide Trail</a> - 2024
+        <a href="/trail/AT">Appalachian Trail</a> - 2018
+        </br><a href="/trail/PCT">Pacific Crest Trail</a> - 2022
+        </br> <a href="/trail/CDT">Continental Divide Trail</a> - 2024
         </br> NH48 4k - 36/48
     </p>
 </div>
 <div class="row section__overflow section__overflow-hidden">
-    <p id="aboutData" class="col-12 section-about-paragraph">
+    <p id="about-data" class="col-12 section-about-paragraph">
         I'm Bubs, a passionate hiker on a mission to explore scenic views along some rugged trails. With a heart for adventure and a love for nature, I've embarked on some of the most iconic long-distance trails in the United States.
         Having thru-hiked both the legendary Appalachian Trail and the breathtaking Pacific Crest Trail, I've experienced the exhilarating highs and challenging lows of extended wilderness journeys. These trails have not only tested my physical endurance but also enriched my soul with the beauty of nature and the camaraderie of fellow hikers.      
         But the adventure doesn't stop there! I'm currently gearing up to tackle the Continental Divide Trail (CDT), the final leg of a journey over 7,900 miles completing these 3 monumental trails known as the Triple Crown of Hiking. Stretching over 3,100 miles through the rugged Rocky Mountains, the CDT promises to be the ultimate test of resilience and determination.
     </p>
 </div>
-
-<script>
-    sessionHelper.addReadMore("about", "aboutData");
-</script>

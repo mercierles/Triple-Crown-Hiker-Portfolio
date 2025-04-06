@@ -1,13 +1,14 @@
+import {sessionHelper} from './session-helper.js';
 // Initialize LighterPack Data
-function lighterPackInit(url){
+export function lighterPackInit(url){
 	let x = JSON.parse(sessionStorage.getItem("trailData"));
 	
-	var lighterPackSelectList = jQuery("#lighterPackURL option");
-	if (lighterPackSelectList.length == 0 || !jQuery("#lighterPackURL option").hasClass(x.trailShortName)) {
+	var lighterPackSelectList = jQuery("#lighter-pack-url option");
+	if (lighterPackSelectList.length == 0 || !jQuery("#lighter-pack-url option").hasClass(x.trailShortName)) {
 		var lpKeys = Object.keys(x.trailLighterPack);
 		lighterPackSelectList.remove();
 		if(!url || url === ""){url = x.trailLighterPack[lpKeys[0]]}
-		lpKeys.forEach(function(key){jQuery("#lighterPackURL").append("<option class="+x.trailShortName+" value="+x.trailLighterPack[key]+">"+key+"</option>")});
+		lpKeys.forEach(function(key){jQuery("#lighter-pack-url").append("<option class="+x.trailShortName+" value="+x.trailLighterPack[key]+">"+key+"</option>")});
 	
 	}
 	console.log();
@@ -55,8 +56,8 @@ function getLighterPackData(lpURL){
 // Populate Results
 function popuplateLighterPackData(data){
 	data = data.split("</title>");
-	jQuery("#lighterPack-title")[0].innerText = data[0].split("<title>")[1].toString().replace("&#39;","'");
-	jQuery("#lighterPackData").append(data[1]);
+	jQuery("#lighter-pack-title")[0].innerText = data[0].split("<title>")[1].toString().replace("&#39;","'");
+	jQuery("#lighter-pack-data").append(data[1]);
     jQuery(".lpUnitDropdown, i, select.lpUnit, .lpWeightCell, .lpQtyCell, .lpActionsCell").remove();
-	sessionHelper.addReadMore("lighterPack", "lighterPackData");
+	sessionHelper.addReadMore("lighter-pack", "lighter-pack-data");
 }

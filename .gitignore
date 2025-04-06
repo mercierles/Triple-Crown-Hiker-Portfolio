@@ -131,3 +131,5 @@ dist
 
 #vs code workspace
 .vscode/HikerPortfolio.code-workspace
+public/js/prod/
+Dockerfile

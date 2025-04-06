@@ -1,6 +1,8 @@
+import {sessionHelper} from './session-helper.js';
+
 var svgTrail, svgTrailLength,PCTMileageRatio,currentMileage;
 // Initialize
-function mapInit(){
+export function mapInit(){
     svgTrail = document.getElementById("Trail_Progress");
     svgTrailLength = Number(svgTrail.getTotalLength()).toFixed(2);
     PCTMileageRatio = Number((2650/svgTrailLength)).toFixed(2);

@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-var p = path.join(path.dirname(import.meta.dirname),'trailData','trailData.json');
+var p = path.join(path.dirname(import.meta.dirname),'trail_data','trailData.json');
 export default class trailModel{
     constructor(pageTitle){
         this.pageTitle = pageTitle;

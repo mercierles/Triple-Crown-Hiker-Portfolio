@@ -2,15 +2,15 @@
     <h1 class="col-12">The Chronicles..</h1>
 </div>
 <div class="row justify-content-center mb-5" style="display:none;">
-    <label class="col-auto font-weight-bold" for="blogDate">Select Post:</label>
-    <select id="blogDate" class="col-auto">
+    <label class="col-auto font-weight-bold" for="blog-date">Select Post:</label>
+    <select id="blog-date" class="col-auto">
         <!-- Fill options based on available files -->
         <option value="select">Please Select...</option>
     </select>
     <h5>(Sorted by Latest Post)</h5>
     <script>
-        jQuery("#blogDate").change(function(){
-            jQuery("#blogData").empty();
+        jQuery("#blog-date").change(function(){
+            jQuery("#blog-data").empty();
             jQuery("#blog .section__show-more").remove();
             blogInit(this.value);
             // jQuery("#blog-title")[0].innerText = this.selectedOptions[0].innerText;
@@ -18,7 +18,7 @@
     </script>
 </div>
 <div class="row section__overflow section__overflow-hidden" style="display:none;">
-    <p id="blogData" class="col-12 section-blog-paragraph">
+    <p id="blog-data" class="col-12 section-blog-paragraph">
         <!-- Parse Data In via PHP-->
     </p>
 </div>

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import trailModel from '../models/trailModel.js';
+import trailModel from '../models/trail-model.js';
 import fs from 'fs';
 import path from 'path';
 
@@ -17,6 +17,7 @@ export function getTrailAT(req, res, next) {
 
 export function getTrailCDT(req, res, next) {
     console.log("Getting CDT Route");
+    console.log(JSON.stringify(trailModel));
     trailModel.trails('cdt',(td)=>{
         console.log('rendering');
         res.render('index', {trailData: td});

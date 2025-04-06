@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Local CSS/JS -->
         <link rel="stylesheet" href="../../public/css/index.css"/>
-        <script src="../../public/js/sessionHelper.js"></script>
+        <!-- <script src="../../public/js/session-helper.js"></script> -->
+        <!-- Scroll to top on page load -->
+        <!-- <script src="../../public/js/page-load.js"></script> -->
+        
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="../../public/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../../public/images/favicon/favicon-32x32.png">
@@ -17,32 +20,7 @@
     <!-- <link rel="manifest" href="images/favicon/site.webmanifest"> -->
     <!-- Title -->
     <title><%- trailData.trailShortName %></title>
-    <!-- Scroll to top on page load -->
-    <script>
-        window.onbeforeunload = function () {
-            window.scrollTo({top: 0});
-        }
-        //Use high quality images if internet is fastenough
-        $(document).ready(function(){
-            var internetQuality = 0;
-            let trailShortName = jQuery("#trailID")[0].value;
-            if(navigator && navigator.connection){internetQuality = navigator.connection.downlink;}
-            sessionStorage.setItem('INTERNET',internetQuality.toString());
-            if(internetQuality > 4){
-                console.log('IQ: ' + internetQuality + ' loading HiRES');
-                jQuery("#spotlightImage").css("background-image","url(../public/images/hiRes/"+trailShortName+"/background_1.jpg)");
-            }else if(internetQuality > 2){
-                console.log('IQ: ' + internetQuality + ' loading MedRES');
-                jQuery("#spotlightImage").css("background-image","url(../public/images/medRes/"+trailShortName+"/background_1.jpg)");
-            }else{
-                console.log('IQ: ' + internetQuality + ' loading LowRES');
-                jQuery("#spotlightImage").css("background-image","url(../public/images/lowRes/"+trailShortName+"/background_1.jpg)");
-            }
-            setTimeout(function(){
-                jQuery("#animate_path_1")[0].beginElement();
-            },1000)
-        });
-    </script>
+
     <!-- Google Analytics -->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-BQ77V809W2"></script>
     <script>

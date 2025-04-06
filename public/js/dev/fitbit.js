@@ -1,8 +1,10 @@
+import {sessionHelper, DAY} from './session-helper.js';
+
 const activityType_Array = ['steps','elevation','floors','calories'];
-const unitType_kvp = {steps:"steps",elevation:"feet", floors:"floors", calories:"calories"}
+const unitType_kvp = {steps:"steps",elevation:"feet", floors:"floors", calories:"calories"};
 
 // Initialize
-function fitbitInit(trail){
+export function fitbitInit(trail){
     // Poplate data from each activity
 	// getFitbitBearerToken();
     activityType_Array.forEach(function(value){
@@ -18,7 +20,7 @@ function fitbitInit(trail){
 // If there is an error, populate with data from localstorage if available
 function getFitbitData(activityType, trail){
 	let date = new Date();
-	date = new Date(date - (5*day));
+	date = new Date(date - (5*DAY));
 	$.ajax({
 		type: "GET",
         data: {
@@ -51,7 +53,7 @@ function getFitbitData(activityType, trail){
 
 // Populate Results
 function popuplateFitbitData(activityType, data){
-	jQuery("#fitbitData").append('<div class="col-6 mb-5"><h5>Average '+activityType+' Per Day:</h5><span id="'+activityType+'">'+Math.round(data)+' '+ unitType_kvp[activityType]+'</span></div>');
+	jQuery("#fitbit-data").append('<div class="col-6 mb-5"><h5>Average '+activityType+' Per Day:</h5><span id="'+activityType+'">'+Math.round(data)+' '+ unitType_kvp[activityType]+'</span></div>');
 	jQuery("#fitbit .section__show-more").remove();
-	sessionHelper.addReadMore("fitbit", "fitbitData");
+	sessionHelper.addReadMore("fitbit", "fitbit-data");
 }

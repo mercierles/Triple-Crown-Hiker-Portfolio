@@ -1,18 +1,26 @@
-<script type="module" src="../../public/js/instagram.js" defer></script>
-<script src="../../public/js/pct_map.js" defer></script>
-<script src="../../public/js/fitbit.js" defer></script>
-<script src="../../public/js/lighterPack.js"></script>
-<script type="module" src="../../public/js/index.js" defer></script>
-<script src="../../public/js/blog.js" defer></script>
-
-
+<%if(process.env.NODE_ENV === 'dev') {%>
+    <script type="module" src="../../public/js/dev/session-helper.js"></script>
+    <script type="module" src="../../public/js/dev/page-load.js"></script>
+    <script type="module" src="../../public/js/dev/instagram.js" defer></script>
+    <script type="module" src="../../public/js/dev/pct-map.js" defer></script>
+    <script type="module" src="../../public/js/dev/fitbit.js" defer></script>
+    <script type="module" src="../../public/js/dev/lighter-pack.js"></script>
+    <script type="module" src="../../public/js/dev/index.js" defer></script>
+    <script type="module" src="../../public/js/dev/blog.js" defer></script>
+<%}else{%>
+    <script type="module" src="../../public/js/prod/session-helper.js"></script>
+    <script type="module" src="../../public/js/prod/page-load.js"></script>
+    <script type="module" src="../../public/js/prod/instagram.js" defer></script>
+    <script type="module" src="../../public/js/prod/pct-map.js" defer></script>
+    <script type="module" src="../../public/js/prod/fitbit.js" defer></script>
+    <script type="module" src="../../public/js/prod/lighter-pack.js"></script>
+    <script type="module" src="../../public/js/prod/index.js" defer></script>
+    <script type="module" src="../../public/js/prod/blog.js" defer></script>
+<%}%>
+        
+<link rel="stylesheet" href="../../public/css/index.css"/>
 <!-- Load Calcite components from CDN -->
 <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/2.13.2/calcite.css" />
-<!-- <script type="module" src="https://js.arcgis.com/calcite-components/2.13.2/calcite.esm.js"></script> -->
 
 <!-- Load the ArcGIS Maps SDK for JavaScript from CDN -->
 <link rel="stylesheet" href="https://js.arcgis.com/4.31/esri/themes/light/main.css" />
-<!-- <script src="https://js.arcgis.com/4.30/"></script> -->
-
-<!-- Load Map components from CDN-->
-<!-- <script type="module" src="https://js.arcgis.com/map-components/4.31/arcgis-map-components.esm.js"></script> -->

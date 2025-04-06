@@ -1,8 +1,8 @@
 import express from 'express';
-const router = express.Router();
+const ROUTER = express.Router();
 
 // '/' just looks for paths that contain / (which all of them do and since we call next, it continues)
-router.use('/', (req, res, next) => {
+ROUTER.use('/', (req, res, next) => {
     //Get Module and call function
     console.log('Middleware is where we can execute things like authentication, '+
      'sitewide logs, and things everypage may want to make use of'+
@@ -10,4 +10,4 @@ router.use('/', (req, res, next) => {
     next();
 });
 
-export default router;
+export default ROUTER;

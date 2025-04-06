@@ -11,7 +11,8 @@
         "trailLighterPack":{"Full Pack Weight":"https://lighterpack.com/r/c0z1be","Warm Pack Weight":"https://lighterpack.com/r/gypdcw","Cold Pack Weight":"https://lighterpack.com/r/xrbf9u"},
         "showBlog":false,
         "long": -116.692924,
-        "lat": 33.922826
+        "lat": 33.922826,
+        "portalID": "39728eb580ea4d2e84c01a82b6247a50"
     },
 "at" : {
     "trailName": "Appalachian Trail",
@@ -26,7 +27,8 @@
     "trailLighterPack":{"Full Pack Weight":"https://lighterpack.com/r/c0z1be"},
     "showBlog":false,
     "long": -83.986057,
-    "lat": 34.705960
+    "lat": 34.705960,
+    "portalID": "39728eb580ea4d2e84c01a82b6247a50"
 },
 "cdt" : {
     "trailName": "Continental Divide Trail",
@@ -41,6 +43,7 @@
     "trailLighterPack":{"Full Pack Weight":"https://lighterpack.com/r/r1ci9c","Warm Pack Weight":"https://lighterpack.com/r/fno8w6","Cold Pack Weight":"https://lighterpack.com/r/slic24"},
     "showBlog":false,
     "long": -108.714315,
-    "lat": 33.922826
+    "lat": 33.922826,
+    "portalID": "39728eb580ea4d2e84c01a82b6247a50"
 }
 }

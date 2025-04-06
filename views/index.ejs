@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="htmlLoaded">
+<html id="html-loaded">
     <%- include('includes/head.ejs') %>
     <input id="trailID" type="hidden" value="<%- trailData.trailShortName.toLowerCase()  %>">
     <textarea id="jsonData" type="hidden" style="display: none;"><%- JSON.stringify(trailData) %></textarea>
@@ -12,16 +12,16 @@
         <div id="spotlightImage" class="spotlightImage" > <!-- style="background-image:url('../public/images/lowRes/<%- trailData.trailShortName.toLowerCase()  %>/background_1.jpg')" > --> </div>
         <main class="container-fluid p-0">
             <% if(trailData.trailShortName === 'PCT') { %>
-                <%- include('includes/trail/pct/pctSpotlight.ejs') %>
+                <%- include('includes/trail/pct/spotlight.ejs') %>
             <% }else if(trailData.trailShortName === 'CDT'){%>
-                <%- include('includes/trail/cdt/cdtSpotlight.ejs') %>
+                <%- include('includes/trail/cdt/spotlight.ejs') %>
             <% }else if(trailData.trailShortName === 'AT'){%>
-                <%- include('includes/trail/at/atSpotlight.ejs') %>
+                <%- include('includes/trail/at/spotlight.ejs') %>
             <% }%>
             <section id="about" class="row section section-about">
                 <!-- Section Lazy Loaded by observer -->
             </section>
-            <section id="trailInfo" class="row section section-trail">
+            <section id="trail-info" class="row section section-trail">
                 <!-- Section Lazy Loaded by observer -->
             </section>
             <section id="instagram" class="row section section-instagram">
@@ -33,7 +33,7 @@
             <section id="fitbit" class="row section section-stats">
                 <!-- Section Lazy Loaded by observer -->
             </section>
-            <section id="lighterPack" class="row section section-stats">
+            <section id="lighter-pack" class="row section section-stats">
                 <!-- Section Lazy Loaded by observer -->
             </section>
             <section id="map" class="row section section-mapshare">

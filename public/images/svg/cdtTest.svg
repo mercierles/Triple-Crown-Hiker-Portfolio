@@ -1,7 +1,7 @@
         <svg class="pct-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 367.18643 337.08812"><defs><style>.bht-mask__hidden{opacity: 0;}.black{fill:#000;}.green{fill:#018687;}.cls-bg{opacity:0;}.pen{fill: none;stroke:#000;stroke-linecap: round;stroke-width:15;}</style></defs>
-            <g id="Layer_2" data-name="Layer 2">
+            <g id="layer-2" data-name="Layer 2">
                 <g id="Logo">
-                    <g id="PCT">
+                    <g id="pct">
                         <g id="BHT-Mask" class="bht-mask__hidden">
                             <path id="Pen-Path_12"  clip-path="url(#B-Letter_12)" stroke-dasharray="77.02301025390625"  class="black pen"  d="M348.18935,160c7.72278,4.93787,12.54773,6.35623,15.5,5.5,3.72632-1.86063,2.5-6.5-1.33868-7.8331-5.16132-2.6669-13.82-2.19275-17.16132.3331-8,2-7,11-3,14,3.75519,3.82809,7.74921,6.19821,12,7">
                                 <animate id="animate_path_12" attributeName="stroke-dashoffset" from="77.02301025390625" to="0" dur="1s" fill="freeze"/> 

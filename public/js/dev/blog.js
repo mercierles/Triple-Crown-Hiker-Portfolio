@@ -1,5 +1,6 @@
+import {sessionHelper} from './session-helper.js';
 // Initialize Blog Data
-function blogInit(blogPost){
+export function blogInit(blogPost){
 	let x = JSON.parse(sessionStorage.getItem("trailData"));
 	if(!x.showBlog){jQuery("#blog").remove();return;}
 	if(!blogPost || blogPost === ""){
@@ -34,7 +35,7 @@ function getBlogData(blogPost){
 		success: function(response){
 			if(response != ""){
 				let jsonResponse = JSON.parse(response);
-				if(jQuery("#blogDate option[value='select']").length == 1){
+				if(jQuery("#blog-date option[value='select']").length == 1){
 					popuplateDropDown(jsonResponse['Blogs'], jsonResponse['SelectedBlogName']);
 				}
 				popuplateBlogData(jsonResponse['SelectedBlogData']);
@@ -54,17 +55,17 @@ function getBlogData(blogPost){
 // Populate Results
 function popuplateBlogData(data){
 	jQuery("#blog").children().show();
-	jQuery("#blogData").append("<pre>"+data+"</pre>");
-	sessionHelper.addReadMore("blog", "blogData");
+	jQuery("#blog-data").append("<pre>"+data+"</pre>");
+	sessionHelper.addReadMore("blog", "blog-data");
 }
 
 // Populate Results
 function popuplateDropDown(data, fileName){
 	data.forEach(function(item,index){
 		if(item.toString()  === fileName){
-			jQuery("#blogDate").append("<option value='"+item+"' selected>"+item.toString().split("_")[1].split(".")[0]+"</option>");
+			jQuery("#blog-date").append("<option value='"+item+"' selected>"+item.toString().split("_")[1].split(".")[0]+"</option>");
 		}else{
-			jQuery("#blogDate").append("<option value='"+item+"'>"+item.toString().split("_")[1].split(".")[0]+"</option>");
+			jQuery("#blog-date").append("<option value='"+item+"'>"+item.toString().split("_")[1].split(".")[0]+"</option>");
 		}
 	})
 	jQuery("option[value*='select']").remove();
