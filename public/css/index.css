@@ -1,3 +1,4 @@
+
 :root{
     --primary-color:#5392AA;
     --secondary-color:#66AA53;
@@ -153,7 +154,7 @@ p{
 
     min-height: calc(100vh - 180px);
     max-width: 1000px;
-    width: 100vw;
+    width: 97vw;
     margin: 130px auto;
     padding: 30px;
 
@@ -333,6 +334,10 @@ p{
     width: 80vw;
 }
 
+/* Section Fitbit */
+.fitbit-activity-result{
+    font-size:1.5rem;
+}
 /* Section Lighter Pack */
 .lpCategories, .lpCategory, .lpItems, .lpHeader {
     list-style: none;
