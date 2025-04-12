@@ -25,7 +25,6 @@ const observer = new IntersectionObserver(entries => {
                                 });
                             }
                         });
-
                     });
                 }else if(entry.target.id === "fitbit"){
                     fitbitInit(jsonData.trailShortName);
@@ -43,7 +42,6 @@ const observer = new IntersectionObserver(entries => {
                     jQuery(".section-trail__paragraph")[0].innerText = jsonData.trailDescription;
                     jQuery(".section-trail__img")[0].src = jsonData.trailInfoImage;
                 }else if(entry.target.id === "about"){
-                    sessionHelper.addReadMore("about", "about-data");
                     let internetQuality = sessionHelper.GetInternetQuality();
                     if(internetQuality > 8){
                         console.log('Internet Quality: ' + internetQuality + ' loading HiRES');
@@ -52,6 +50,7 @@ const observer = new IntersectionObserver(entries => {
                         console.log('Internet Quality: ' + internetQuality + ' loading MedRES');
                         jQuery("#profile_img").attr('src', "../public/images/medRes/profile.jpg");
                     }
+                    sessionHelper.addReadMore("about", "about-data");
                 }else if(entry.target.id === "map"){
                     // Todo Setup ArcGIS Map
                     createArcGISMap(jsonData.lat,jsonData.long, jsonData.portalID);

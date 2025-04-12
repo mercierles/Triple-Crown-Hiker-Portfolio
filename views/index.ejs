@@ -3,13 +3,9 @@
     <%- include('includes/head.ejs') %>
     <input id="trailID" type="hidden" value="<%- trailData.trailShortName.toLowerCase()  %>">
     <textarea id="jsonData" type="hidden" style="display: none;"><%- JSON.stringify(trailData) %></textarea>
-    <body class="<%- trailData.trailShortName.toLowerCase()  %>"> <!-- onload="setBackground('<%- trailData.trailShortName.toLowerCase()  %>');"> -->
-        <!-- <link rel="preload" href="../public/images/lowRes/<%- trailData.trailShortName.toLowerCase()  %>/background_1.jpg" as="image">
-        <link rel="preload" href="../public/images/medRes/<%- trailData.trailShortName.toLowerCase()  %>/background_1.jpg" as="image">
-        <link rel="preload" href="../public/images/hiRes/<%- trailData.trailShortName.toLowerCase()  %>/background_1.jpg" as="image"> -->
+    <body class="<%- trailData.trailShortName.toLowerCase()  %>"> 
         <%- include('includes/navigation.ejs') %>
-        <!-- <div id="spotlightImage" style="display: flex;position: fixed;z-index: -1000;height: 100%;width: auto;overflow-x: hidden;" src="../public/images/lowRes/<%- trailData.trailShortName.toLowerCase()  %>/background_1.jpg"></div> -->
-        <div id="spotlightImage" class="spotlightImage" > <!-- style="background-image:url('../public/images/lowRes/<%- trailData.trailShortName.toLowerCase()  %>/background_1.jpg')" > --> </div>
+        <div id="spotlightImage" class="spotlightImage" ></div>
         <main class="container-fluid p-0">
             <% if(trailData.trailShortName === 'PCT') { %>
                 <%- include('includes/trail/pct/spotlight.ejs') %>
