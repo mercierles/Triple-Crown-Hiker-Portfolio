@@ -1,11 +1,14 @@
 import {sessionHelper} from './session-helper.js';
-//Scroll to top before page unloads
-window.onbeforeunload = function () {
-    window.scrollTo({top: 0});
-}
+
 
 //Use high quality images if internet is fastenough
 $(document).ready(function(){
+    //Scroll to top of page
+    window.scrollTo({
+        top: 0,
+        behavior: "instant",
+      });
+      
     let trailShortName = jQuery("#trailID")[0].value;
     let internetQuality = sessionHelper.GetInternetQuality();
     if(internetQuality > 8){
