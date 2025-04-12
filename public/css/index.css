@@ -310,7 +310,7 @@ p{
 
 .section-instagram-posts{
     align-self: center;
-    top: -55px;
+    /* top: -55px; */
     max-width: 470px;
     padding: 0;
 }
@@ -353,11 +353,11 @@ p{
  /* Section Map */
  .section .section-map{
     position: relative;
-    top: -55px;
+    /* top: -55px; */
  }
 
 .section-map__svg{
-    max-height: 70vw;
+    max-height: 70vh;
 }
 
 .section-map__svg .path-trail,.path-trail-progress{

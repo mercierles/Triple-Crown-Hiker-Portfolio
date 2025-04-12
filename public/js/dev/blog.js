@@ -56,7 +56,7 @@ function getBlogData(blogPost){
 function popuplateBlogData(data){
 	jQuery("#blog").children().show();
 	jQuery("#blog-data").append("<pre>"+data+"</pre>");
-	sessionHelper.addReadMore("blog", "blog-data");
+	sessionHelper.addReadMore("blog", "blog-data_container");
 }
 
 // Populate Results

@@ -37,7 +37,7 @@ sessionHelper.addReadMore = function(id, section){
 		}
 	});
 	
-	var windowHeight = $(window).height() * .7;
+	var windowHeight = $(window).height() * .73;
 	if (Math.round(jQuery("#"+section).height()) < Math.round(windowHeight)) {
 		jQuery("#"+id+" .section__show-more-button").hide();
 	}else{

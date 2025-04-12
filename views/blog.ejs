@@ -1,23 +1,20 @@
-<div id="blog-title" class="row section-title" style="display:none;">
+<div id="blog-title" class="row section-title">
     <h1 class="col-12">The Chronicles..</h1>
 </div>
-<div class="row justify-content-center mb-5" style="display:none;">
-    <label class="col-auto font-weight-bold" for="blog-date">Select Post:</label>
-    <select id="blog-date" class="col-auto">
-        <!-- Fill options based on available files -->
-        <option value="select">Please Select...</option>
-    </select>
-    <h5>(Sorted by Latest Post)</h5>
-    <script>
-        jQuery("#blog-date").change(function(){
-            jQuery("#blog-data").empty();
-            jQuery("#blog .section__show-more").remove();
-            blogInit(this.value);
-        });
-    </script>
-</div>
-<div class="row section__overflow section__overflow-hidden" style="display:none;">
-    <p id="blog-data" class="col-12 section-blog-paragraph">
-        <!-- Pass Blog files -->
-    </p>
+<div class="section__overflow section__overflow-hidden">
+    <div id="blog-data_container">
+        <div class="row justify-content-center mb-5">
+            <label class="col-auto font-weight-bold" for="blog-date">Select Post:</label>
+            <select id="blog-date" class="col-auto">
+                <!-- Fill options based on available files -->
+                <option value="select">Please Select...</option>
+            </select>
+            <h5>(Sorted by Latest Post)</h5>
+        </div>
+        <div class="row" >
+            <p id="blog-data" class="col-12 section-blog-paragraph">
+                <!-- Pass Blog files -->
+            </p>
+        </div>
+    </div>
 </div>

@@ -59,5 +59,5 @@ function popuplateLighterPackData(data){
 	jQuery("#lighter-pack-title")[0].innerText = data[0].split("<title>")[1].toString().replace("&#39;","'");
 	jQuery("#lighter-pack-data").append(data[1]);
     jQuery(".lpUnitDropdown, i, select.lpUnit, .lpWeightCell, .lpQtyCell, .lpActionsCell").remove();
-	sessionHelper.addReadMore("lighter-pack", "lighter-pack-data");
+	sessionHelper.addReadMore("lighter-pack", "lighter-pack-data_container");
 }

@@ -4,11 +4,11 @@ import {sessionHelper} from './session-helper.js';
 //Use high quality images if internet is fastenough
 $(document).ready(function(){
     //Scroll to top of page
-    window.scrollTo({
-        top: 0,
-        behavior: "instant",
-      });
-      
+    // window.scrollTo({
+    //     top: 0,
+    //     behavior: "instant",
+    //   });
+
     let trailShortName = jQuery("#trailID")[0].value;
     let internetQuality = sessionHelper.GetInternetQuality();
     if(internetQuality > 8){
@@ -32,6 +32,10 @@ $(document).ready(function(){
         jQuery('animate').attr("begin",'0.001s');
     }
     setTimeout(function(){
+        window.scrollTo({
+            top: 0,
+            behavior: "instant",
+        });
         jQuery("#animate_path_1")[0].beginElement();
     },1000);
 

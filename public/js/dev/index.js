@@ -25,9 +25,12 @@ const observer = new IntersectionObserver(entries => {
                                 });
                             }
                         });
+                        sessionHelper.addReadMore("instagram", "instagram-data_container");
                     });
+
                 }else if(entry.target.id === "fitbit"){
                     fitbitInit(jsonData.trailShortName);
+
                 }else if(entry.target.id === "lighter-pack"){
                     jQuery("#lighter-pack-url").change(function(){
                         jQuery("#lighter-pack-data").empty();
@@ -35,12 +38,24 @@ const observer = new IntersectionObserver(entries => {
                         lighterPackInit(this.value);
                     });
                     lighterPackInit("");
+
                 }else if(entry.target.id === "blog"){
                     blogInit();
+                    jQuery("#blog-date").change(function(){
+                        jQuery("#blog-data").empty();
+                        jQuery("#blog .section__show-more").remove();
+                        blogInit(this.value);
+                    });
+                    
+
                 }else if(entry.target.id === "trail-info"){
                     //Update section with current info
                     jQuery(".section-trail__paragraph")[0].innerText = jsonData.trailDescription;
                     jQuery(".section-trail__img")[0].src = jsonData.trailInfoImage;
+                    jQuery("#trailURL")[0].href = jsonData.trailURL;
+                    jQuery("#trailURL")[0].innerText = jsonData.trailName;
+                    sessionHelper.addReadMore("trail-info", "trail-info-data_container");
+
                 }else if(entry.target.id === "about"){
                     let internetQuality = sessionHelper.GetInternetQuality();
                     if(internetQuality > 8){
@@ -50,10 +65,12 @@ const observer = new IntersectionObserver(entries => {
                         console.log('Internet Quality: ' + internetQuality + ' loading MedRES');
                         jQuery("#profile_img").attr('src', "../public/images/medRes/profile.jpg");
                     }
-                    sessionHelper.addReadMore("about", "about-data");
+                    sessionHelper.addReadMore("about", "about-data_container");
+
                 }else if(entry.target.id === "map"){
                     // Todo Setup ArcGIS Map
                     createArcGISMap(jsonData.lat,jsonData.long, jsonData.portalID);
+                    sessionHelper.addReadMore("about", "about-data_container");
                 }
 
                 entry.target.classList.toggle("section__show", entry.isIntersecting);

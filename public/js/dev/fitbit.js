@@ -55,5 +55,5 @@ function getFitbitData(activityType, trail){
 function popuplateFitbitData(activityType, data){
 	jQuery("#fitbit-data").append('<div class="col-12 mb-5"><h2 class="d-inline-flex me-2">Average '+activityType+' Per Day</h2><span id="'+activityType+'" class="fitbit-activity-result d-inline-flex">'+Math.round(data)+' '+ unitType_kvp[activityType]+'</span></div>');
 	jQuery("#fitbit .section__show-more").remove();
-	sessionHelper.addReadMore("fitbit", "fitbit-data");
+	sessionHelper.addReadMore("fitbit", "fitbit-data_container");
 }
