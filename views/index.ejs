@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="html-loaded">
+<html id="html-loaded" lang="en" class="no-scroll">
     <%- include('includes/head.ejs') %>
     <input id="trailID" type="hidden" value="<%- trailData.trailShortName.toLowerCase()  %>">
     <textarea id="jsonData" type="hidden" style="display: none;"><%- JSON.stringify(trailData) %></textarea>
@@ -18,25 +18,25 @@
             <% }else if(trailData.trailShortName === 'AT'){%>
                 <%- include('includes/trail/at/spotlight.ejs') %>
             <% }%>
-            <section id="about" class="row section section-about">
+            <section id="about" class="row section section-about section-animated">
                 <!-- Section Lazy Loaded by observer -->
             </section>
-            <section id="trail-info" class="row section section-trail">
+            <section id="trail-info" class="row section section-trail section-animated">
                 <!-- Section Lazy Loaded by observer -->
             </section>
-            <section id="instagram" class="row section section-instagram">
+            <section id="instagram" class="row section section-instagram section-animated">
                 <!-- Section Lazy Loaded by observer -->
             </section>
-            <section id="blog" class="row section section-blog">
+            <section id="blog" class="row section section-blog section-animated">
                 <!-- Section Lazy Loaded by observer -->
             </section>
-            <section id="fitbit" class="row section section-stats">
+            <section id="fitbit" class="row section section-stats section-animated">
                 <!-- Section Lazy Loaded by observer -->
             </section>
-            <section id="lighter-pack" class="row section section-stats">
+            <section id="lighter-pack" class="row section section-stats section-animated">
                 <!-- Section Lazy Loaded by observer -->
             </section>
-            <section id="map" class="row section section-mapshare">
+            <section id="map" class="row section section-mapshare section-animated">
                 <!-- Section Lazy Loaded by observer -->
             </section>
             <footer>

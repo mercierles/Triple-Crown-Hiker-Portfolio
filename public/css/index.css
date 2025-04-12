@@ -21,6 +21,58 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+a{
+    color:#004dc2;
+    text-decoration: underline;
+}
+
+
+/* .scroll-watcher{
+    height: 10px;
+    position:fixed;
+    top:0;
+    z-index: 1000;
+    width: 100vw;
+    background-color: yellowgreen;
+    scale: 0 1;
+    transform-origin: left;
+    animation-name: scroll-watcher;
+    animation-timeline: scroll(y);
+    
+} */
+
+/* @keyframes scroll-watcher {
+    to  {
+        scale: 1 1;
+        background-color: limegreen;
+        
+    }
+} */
+@media (prefers-reduced-motion: no-preference) {
+    /* styles to apply if a user's device settings are set to reduced motion */
+    .skip{
+        animation-play-state: paused;
+    }
+    .no-scroll{
+        overflow: hidden;
+        scrollbar-width: none;
+    }
+    
+    .section-animated{
+        opacity: 0;
+        scale:0.5;
+        animation:show linear forwards;
+        animation-direction: normal;
+        animation-timeline: view();
+        animation-range-start: 50px;
+        animation-range-end: 500px;
+    }
+    @keyframes show {
+        to {opacity: 1;scale: 1;}
+    }
+}
+
 .spotlightImage{
     position: fixed;
     z-index: -1000;
@@ -36,15 +88,6 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-/* body.pct{
-    background-image: url(../images/lowRes/pct/background_1.jpg);
-}
-body.at{
-    background-image: url(../images/lowRes/at/background_1.jpg);
-}
-body.cdt{
-    background-image: url(../images/lowRes/cdt/background_1.jpg);
-} */
 
 /* General Configs */
 p{

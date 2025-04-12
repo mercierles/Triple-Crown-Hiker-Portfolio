@@ -16,10 +16,7 @@ export function getTrailAT(req, res, next) {
 };
 
 export function getTrailCDT(req, res, next) {
-    console.log("Getting CDT Route");
-    console.log(JSON.stringify(trailModel));
     trailModel.trails('cdt',(td)=>{
-        console.log('rendering');
         res.render('index', {trailData: td});
     });
 };

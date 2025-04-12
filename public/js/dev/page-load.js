@@ -21,7 +21,20 @@ $(document).ready(function(){
     }
 
     // Start the Spotlight Logo Animation
+    const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+    if (isReduced) {
+        // DON'T use an amination here!
+        console.log("Skipping animation because of reduced motion preference");
+        jQuery('animate').attr("dur",'0.001s');
+        jQuery('animate').attr("begin",'0.001s');
+    }
     setTimeout(function(){
         jQuery("#animate_path_1")[0].beginElement();
     },1000);
+
+    document.querySelector('#Background animate').addEventListener('endEvent', function() {
+        console.log('Animation finished');
+        jQuery("html").removeClass("no-scroll");
+    }, false);
+
 });

@@ -133,3 +133,4 @@ dist
 .vscode/HikerPortfolio.code-workspace
 public/js/prod/
 Dockerfile
+views/index2.ejs
