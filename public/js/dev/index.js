@@ -70,7 +70,7 @@ const observer = new IntersectionObserver(entries => {
                 }else if(entry.target.id === "map"){
                     // Todo Setup ArcGIS Map
                     createArcGISMap(jsonData.lat,jsonData.long, jsonData.portalID);
-                    sessionHelper.addReadMore("about", "about-data_container");
+                    sessionHelper.addReadMore("map", "map-data_container");
                 }
 
                 entry.target.classList.toggle("section__show", entry.isIntersecting);
