@@ -20,6 +20,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    color: var(--font-color);
 }
 
 a{
@@ -131,6 +132,7 @@ p{
 .navbar-brand{
     font-size: clamp(20px, 1vw, 40px);
     cursor: pointer;
+    color: rgba(0, 0, 0, 1);
 }
 
 .navbar-nav{
@@ -138,6 +140,15 @@ p{
     max-width: 650px;
     justify-content: space-between;
 }
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 1);
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: rgba(0, 0, 0, 0.55);
+}
+
 .navbar-collapse {
     margin-left: 20px;
 }
@@ -290,7 +301,7 @@ p{
     font-size: 40px;
 }
 
-/* Section PCT */
+/* Section Trail */
 .section-trail-profile__img{
     object-fit: cover;
     object-position: center;
@@ -298,6 +309,12 @@ p{
 
 .section-trail__paragraph{
     margin-top: 20px;
+}
+
+.section-trail__img{
+    height: auto;
+    width: 70vw;
+    max-width: 600px;
 }
 
 /* Section Instagram */

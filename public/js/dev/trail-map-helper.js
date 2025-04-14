@@ -1,6 +1,6 @@
 import {sessionHelper} from './session-helper.js';
 export function createArcGISMap(lat,long, portalID){	
-    import("@arcgis/core/config.js").then(({default: config})=>config.apiKey = "AAPTxy8BH1VEsoebNVZXo8HurPX-I8luMhXCagz7mA1X4RLCntD54E4IbiKw3utq4_-JIppgSFVzVGWVZ-rgzLp937CZItg3Bc3ud1VFucqkoO3IMQ_knfg_OTsq2QljgZ-QOMJT8aZ-_EoFwRe7oNC77gd48bK2HR0FJmVmW4q29xGSFv9ncUN4nIq0VZcjyV5rXQNuAL0Tx7s4nZBqjR9JeQ..AT1_z3tjWsJo");
+    import("@arcgis/core/config.js").then(({default: config})=>config.apiKey = "AAPTxy8BH1VEsoebNVZXo8HurPX-I8luMhXCagz7mA1X4RIyF6wNVOg0NMT4VzoRTVWrZPTPmtJmTelgigngn6--Ve5-YLUsUejMZTGL6ybE8vs5tNmWjw52LbJJigSoElgyEQTbOLCOxLx7lu3akzz4BuCrPix_Uhx5WQiWStEcfQwbRv-T8KqYttYGcPr-QR0Z1uVNXFqGxfo30VGkF6YBWA..AT1_z3tjWsJo");
     let webMap = null;
     let view = null;
     import("@arcgis/core/WebMap.js").then(
