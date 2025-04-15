@@ -3,6 +3,31 @@ import trailModel from '../models/trail-model.js';
 import fs from 'fs';
 import path from 'path';
 
+// export function getTestData(req,res,next){
+//     var p = path.join(path.dirname(import.meta.dirname),'trail_data','testData.json');
+//     console.log(p);
+//     var trailData;
+//     fs.readFile(p, (error,data)=>{
+//         console.log(data);
+//                 if(!error){
+//                     console.log('reading test data');
+//                     trailData = JSON.parse(data);
+//                     // console.log(trailData);
+
+//                     // if(!trails.hasOwnProperty(this.pageTitle)){
+//                     //     // TODO Write
+                        
+//                     //     trails.push(this);
+//                     //     console.log(JSON.stringify(trails));
+//                     //     console.log('Writing ' + this.pageTitle + ' json data');
+//                     //     fs.writeFile(p,JSON.stringify(trails), (err)=>{console.log(err);});
+//                     // }
+//                     // console.log(trailData);
+//                     res.send(trailData);
+//                 }
+//             });
+// }
+
 export function getTrailPCT(req, res, next){
     trailModel.trails('pct',(td)=>{
         res.render('index', {trailData: td});
